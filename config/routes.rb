@@ -2,7 +2,10 @@ Blogger::Application.routes.draw do
 
   root to: 'articles#index'  # makes '/' show our articles index page
 
-  resources :articles
+  resources :articles do
+    resources :comments  # specify comments as a sub-resource
+  end
+
 end
 
 # rake routes:

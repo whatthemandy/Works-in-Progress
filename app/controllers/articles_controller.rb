@@ -1,6 +1,6 @@
- include ArticlesHelper
+include ArticlesHelper
 
- class ArticlesController < ApplicationController
+class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
@@ -8,6 +8,10 @@
 
   def show
     @article = Article.find(params[:id])
+
+    # so we can create new comments with the new comment form
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   def new
