@@ -1,4 +1,7 @@
 Blogger::Application.routes.draw do
+
+  root to: 'articles#index'  # makes '/' show our articles index page
+
   resources :articles
 end
 
