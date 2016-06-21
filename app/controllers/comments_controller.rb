@@ -1,5 +1,3 @@
-include CommentsHelper
-
 class CommentsController < ApplicationController
 
   def create
@@ -13,6 +11,11 @@ class CommentsController < ApplicationController
     flash.notice = "Comment Created!"
 
     redirect_to article_path(@comment.article)
+  end
+
+  private
+  def comment_params
+    params.require(:comment).permit(:author_name, :body)
   end
 
 end

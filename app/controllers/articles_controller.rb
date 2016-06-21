@@ -1,5 +1,3 @@
-include ArticlesHelper
-
 class ArticlesController < ApplicationController
 
   def index
@@ -19,11 +17,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    # @article = Article.new
-    # @article.title = params[:article][:title]
-    # @article.body = params[:article][:body]
-    @article = Article.new(article_params)  # added method to helper file
-    @article.save
+    # @article = Article.create(params[:article]) - need strong parameters
+    @article = Article.create(article_params)
 
     flash.notice = "Article '#{@article.title}' Created!"
 
@@ -50,6 +45,11 @@ class ArticlesController < ApplicationController
     flash.notice = "Article '#{@article.title}' Updated!"
 
     redirect_to article_path(@article)
+  end
+
+  private
+  def article_params
+    params.require(:article).permit(:title, :body)
   end
 
 end
