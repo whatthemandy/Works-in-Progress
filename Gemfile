@@ -6,6 +6,13 @@ gem 'forgery'
 # to paginate book results. I added:
 gem 'will_paginate'
 
+# to generate a nifty layout, I added:
+gem 'nifty-generators', :group => :development
+
+# then I ran: "bundle" and "rails generate nifty:layout" and moved the css code
+# generated in the public/stylesheets folder into the assets/stylesheets folder
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
