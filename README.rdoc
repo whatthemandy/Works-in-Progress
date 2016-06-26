@@ -1,4 +1,4 @@
-rails project created form tutorial:
+rails project created from tutorial:
 
 http://code.tutsplus.com/tutorials/zero-to-sixty-creating-and-deploying-a-rails-app-in-under-an-hour--net-8252
 
