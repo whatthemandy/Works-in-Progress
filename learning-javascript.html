@@ -1,0 +1,81 @@
+<!-- Javascript tutorials from: -->
+<!-- http://tutorials.jumpstartlab.com/ -->
+
+<!doctype html>
+<html>
+  <head>
+    <title>Learning Javascript</title>
+  </head>
+  <body>
+    <h1>Learning Canvas</h1>
+    <canvas id='drawing' width="600" height="400"></canvas>
+    <script>
+      var context;
+
+      function rectangle(color, x, y, width, height) {
+        context.fillStyle = color;
+        context.fillRect(x, y, width, height);
+      }
+
+      function text(message, color, x, y) {
+        context.fillStyle = color
+        context.font = "30px sans-serif";
+        context.fillText(message, x, y);
+      }
+
+      // // rectangles with some text:
+      // var canvas = document.getElementById("drawing");
+      // context = canvas.getContext("2d");
+      // rectangle("#333333", 0, 0, 300, 200);
+      // rectangle("#999999", 100, 100, 300, 200);
+      // text("Hello World", "FF0000", 50, 50);
+
+      function bar(x, y) {
+        rectangle("rgb(64, 64, 128)", 0, x*12, y*10, 10);
+      }
+
+      // // bar chart:
+      // var canvas = document.getElementById("drawing");
+      // context = canvas.getContext("2d");
+      // bar(0, 10);
+      // bar(1, 15);
+      // bar(2, 8);
+
+      function pie(progress, value) {
+        context.beginPath();
+        context.fillStyle = "hsl("+(progress * 360)+", 80%, 60%)";
+        context.moveTo(150, 150);
+        context.arc(150, 150, 100, progress*2*Math.PI, (progress+value)*2*Math.PI);
+        context.fill();
+      }
+
+      // // pie chart:
+      // var canvas = document.getElementById("drawing");
+      // context = canvas.getContext("2d");
+      // var data = [0.1, 0.1, 0.5, 0.3];
+      // var progress = 0;
+
+      // data.forEach(function (datum) {
+      //   pie(progress, datum);
+      //   progress += datum;
+      // });
+
+      function line(x, y) {
+        context.strokeStyle = "hsl(40, 80%, 60%)";
+        context.lineWidth = 1.5;
+        context.lineTo(x*50, 100-y*10);
+        context.stroke();
+      }
+
+      // // line chart:
+      // var canvas = document.getElementById("drawing");
+      // context = canvas.getContext("2d");
+      // var data = [4,7,2,4,11];
+
+      // data.forEach(function (datum, index) {
+      //   line(index, datum);
+      // });
+
+    </script>
+  </body>
+</html>
