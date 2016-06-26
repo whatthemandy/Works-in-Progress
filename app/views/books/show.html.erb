@@ -10,6 +10,9 @@
   <% for comment in @comments do %>
     <p><strong><%=h(comment.author) %></strong>: <%=h comment.text %>
   <% end %>
+
+  <!-- to accommodate pagination: -->
+  <%= will_paginate @comments %>
 <% end %>
 
 <br><br><br>

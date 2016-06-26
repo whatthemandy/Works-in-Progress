@@ -7,7 +7,10 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
-    @comments = @book.comments
+    # @comments = @book.comments  # updated to accommodate pagination:
+    @comments = @book.comments.paginate :page => params[:page], :per_page => 10
+    # to sort by descending:
+    # @comments = @book.comments.order('created_at DESC').paginate :page => params[:page], :per_page => 5
   end
 
 end
