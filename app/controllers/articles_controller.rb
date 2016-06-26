@@ -1,5 +1,8 @@
 class ArticlesController < ApplicationController
 
+  # only allow unauthenticated users to access index/show
+  before_filter :require_login, except: [:index, :show]
+
   def index
     @articles = Article.all
   end

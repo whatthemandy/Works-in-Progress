@@ -9,4 +9,9 @@
   <% end %>
 </ul>
 
+<!-- if logged in, show link to create new article -->
+<br>
+<% if logged_in? %>
 <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<% end %>
+
