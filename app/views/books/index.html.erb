@@ -4,7 +4,7 @@
 <!-- view fills in the last yield in application layout and styles the page -->
 
 <% for book in @books do %>
-  <h2><%=h book.title %></h2>
+  <h2><%=link_to(h(book.title), book_path(book)) %></h2>
   <p><%= book.thoughts %></p>
 <% end %>
 

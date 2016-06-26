@@ -14,18 +14,21 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :books
+  resources :books do
+    resources :comments, :only => :create
+  end
 
   # rake routes:
-      #    Prefix Verb   URI Pattern               Controller#Action
-      #     books GET    /books(.:format)          books#index
-      #           POST   /books(.:format)          books#create
-      #  new_book GET    /books/new(.:format)      books#new
-      # edit_book GET    /books/:id/edit(.:format) books#edit
-      #      book GET    /books/:id(.:format)      books#show
-      #           PATCH  /books/:id(.:format)      books#update
-      #           PUT    /books/:id(.:format)      books#update
-      #           DELETE /books/:id(.:format)      books#destroy
+  #        Prefix Verb   URI Pattern                        Controller#Action
+  # book_comments POST   /books/:book_id/comments(.:format) comments#create
+  #         books GET    /books(.:format)                   books#index
+  #               POST   /books(.:format)                   books#create
+  #      new_book GET    /books/new(.:format)               books#new
+  #     edit_book GET    /books/:id/edit(.:format)          books#edit
+  #          book GET    /books/:id(.:format)               books#show
+  #               PATCH  /books/:id(.:format)               books#update
+  #               PUT    /books/:id(.:format)               books#update
+  #               DELETE /books/:id(.:format)               books#destroy
 
 
   # Example resource route with options:
