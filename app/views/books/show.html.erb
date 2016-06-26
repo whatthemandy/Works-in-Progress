@@ -1,6 +1,5 @@
 <% title @book.title %>
 
-<h2><%=link_to(h(@book.title), book_path(@book)) %></h2>
 <p><%= @book.thoughts %></p>
 
 <br>
@@ -26,3 +25,10 @@
 
   <%= f.submit 'Save' %>
 <% end %>
+
+<br><br>
+<p>
+  Admin Actions:
+  <%= link_to 'Edit', edit_book_path(@book) %> |
+  <%= link_to 'Delete', book_path(@book), :method => :delete, data: {:confirm => "Are you sure?"} %>
+</p>

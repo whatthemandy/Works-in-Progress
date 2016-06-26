@@ -1,0 +1,16 @@
+<% title "Editing #{@book.title}" %>
+
+<br>
+<%= form_for(@book) do |form| %>
+  <p>
+    <%= form.label :title %><br/>
+    <%= form.text_field(:title, size: 30) %>
+  </p>
+
+  <p>
+    <%= form.label :thoughts %><br/>
+    <%= form.text_area(:thoughts, cols: 40, rows: 15) %>
+  </p>
+
+  <%= form.submit %>
+<% end %>
