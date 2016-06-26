@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
 
+  # only allow unauthenticated users to access create
+  before_filter :require_login, except: [:create]
+
   def create
     @comment = Comment.new(comment_params)  # added method to helper file
     @comment.article_id = params[:article_id]

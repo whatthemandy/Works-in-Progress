@@ -3,11 +3,13 @@
 
 <%= form_for [ @article, @comment ] do |f| %>
   <p>
-    <%= f.label :author_name, "Your Name" %><br/>  <!-- will print "author name" if not specified -->
+    <%= f.label :author_name, "Your Name" %><br/>
+    <!-- will print "author name" if not specified (I changed it) -->
     <%= f.text_field :author_name %>
   </p>
   <p>
-    <%= f.label :body, "Your Comment" %><br/>  <!-- will print "body" if not specified -->
+    <%= f.label :body, "Your Comment" %><br/>
+    <!-- will print "body" if not specified (I changed it) -->
     <%= f.text_area :body %>
   </p>
   <p>
