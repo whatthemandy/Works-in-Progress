@@ -1,3 +1,43 @@
+var JSCart = {
+  updateCartItemCount : function () {
+    var items = $("#cart div.cart-item");
+    var total = 0;
+
+    // count total number of items in cart & update total
+    items.each(function (){
+      var quantity = $(this).find('span.qty');
+      var value = Number(quantity.text());
+      total += value;
+      $("span#cart-quantity").text(total);
+    });
+  },
+
+  updateCartTotal : function () {
+    var items = $("#cart div.cart-item");
+    var total = 0;
+
+    // calculate total price of items in cart & update total
+    items.each(function (){
+      // find how many of each item are in cart
+      var q = $(this).find('span.qty');
+      var quantity = Number(q.text());
+
+      // find price of each item
+      var p = $(this).find('span.price');
+      var price = parseFloat(p.text());
+
+      // calculate new total and update it
+      total += (quantity * price);
+      $("span#cart-price").text(total.toFixed(2));
+    });
+  },
+
+  updateCart : function () {
+    this.updateCartItemCount();
+    this.updateCartTotal();
+  }
+};
+
 $(function(){
   var inventory = $(rawInventory); // from data.js
   var prototypeItem = $('#prototype-item');
@@ -29,6 +69,9 @@ $(function(){
       var quantity = target.find('span.qty');
       var current = Number(quantity.text());
       quantity.text(current += 1);
+
+      // after every click, update cart totals with JSCart functions
+      JSCart.updateCart();
     });
   });
 });
