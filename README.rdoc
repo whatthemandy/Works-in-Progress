@@ -1,3 +1,9 @@
+rails project created form tutorial:
+
+http://code.tutsplus.com/tutorials/zero-to-sixty-creating-and-deploying-a-rails-app-in-under-an-hour--net-8252
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
