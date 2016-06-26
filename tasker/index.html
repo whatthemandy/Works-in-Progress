@@ -1,0 +1,30 @@
+<!-- Javascript tutorial: -->
+<!-- http://tutorials.jumpstartlab.com/projects/javascript/jquery/jstasker.html -->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tasker</title>
+    <link rel='stylesheet' type="text/css" href='styles.css'/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script src="application.js"></script>
+  </head>
+
+  <body>
+    <h1>JSTasker</h1>
+    <form id='add_task'>
+      <fieldset>
+        <legend>Add a Task</legend>
+        <input autofocus type='text' name='task_text' id='task_text' />
+        <input type='submit' name='add_button' value='Add' />
+      </fieldset>
+    </form>
+
+    <div id='tasks'>
+      <h2>Your Tasks <span id="task_counter"></h2>
+      <ul>
+      </ul>
+    </div>
+  </body>
+</html>
