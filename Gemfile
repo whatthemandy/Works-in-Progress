@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # to create fake data, I added:
 gem 'forgery'
 
+# to paginate book results. I added:
+gem 'will_paginate'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record

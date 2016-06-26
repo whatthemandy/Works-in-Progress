@@ -2,3 +2,7 @@
   <h2><%=h book.title %></h2>
   <p><%= book.thoughts %></p>
 <% end %>
+
+<br><br>
+<!-- to accommodate pagination: -->
+<%= will_paginate @books %>
