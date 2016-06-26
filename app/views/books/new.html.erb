@@ -1,0 +1,16 @@
+<% title 'Create a New Book' %>
+
+<br>
+<%= form_for(@book) do |f| %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field(:title, size: 30) %>
+  </p>
+
+  <p>
+    <%= f.label :thoughts %><br/>
+    <%= f.text_area(:thoughts, cols: 40, rows: 15) %>
+  </p>
+
+  <%= f.submit %>
+<% end %>
