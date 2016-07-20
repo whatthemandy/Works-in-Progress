@@ -1,0 +1,40 @@
+<!-- Javascript tutorial: -->
+<!-- http://tutorials.jumpstartlab.com/projects/javascript/jquery/jscart.html -->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSCart</title>
+    <link rel='stylesheet' type="text/css" href='styles.css'/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="data.js"></script>
+    <script src="application.js"></script>
+  </head>
+  <body>
+    <h1>Balloon-Animals-R-Us</h1>
+    <div id="cart">
+      <h2>My Cart:</h2>
+      <div class='cart-item' id='prototype-cart'>
+        <h3></h3><br>
+        <span class='qty'>0</span>
+        - $<span class='price'></span><br><br>
+      </div>
+      <div class='totals'>
+        <p><span id='cart-quantity'>0</span> items in cart</p>
+        <p>$<span id='cart-price'>0</span> total</p>
+      </div>
+    </div>
+    <div id="inventory">
+      <div class='item' id="prototype-item" >
+        <h3></h3>
+        <ul>
+          <li>Price: <span class="price"></span></li>
+          <li>Qty: <span class="qty"></span></li>
+          <li><a href='#'>Add to Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
